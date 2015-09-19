@@ -15,7 +15,13 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
+from django.conf.urls import patterns
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
-urlpatterns = [
+
+
+urlpatterns = patterns(
+    '',
     url(r'^admin/', include(admin.site.urls)),
-]
+	url(r'^$', 'dealers.views.index')
+)
